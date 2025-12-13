@@ -1,0 +1,14 @@
+{
+  "name": "nft-collection-dockerized",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "compile": "hardhat compile"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-ethers": "^4.0.3",
+    "ethers": "^6.16.0",
+    "hardhat": "^3.1.0"
+  }
+}
