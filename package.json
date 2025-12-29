@@ -1,14 +1,14 @@
 {
-  "name": "nft-collection-dockerized",
+  "name": "nft-collection",
   "version": "1.0.0",
-  "private": true,
-  "type": "module",
   "scripts": {
-    "compile": "hardhat compile"
+    "test": "npx hardhat test"
   },
   "devDependencies": {
-    "@nomicfoundation/hardhat-ethers": "^4.0.3",
-    "ethers": "^6.16.0",
-    "hardhat": "^3.1.0"
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "hardhat": "^2.22.5"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.4.0"
   }
 }

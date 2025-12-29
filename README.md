@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # NFT Collection Smart Contract
 
 ## Overview
@@ -59,3 +60,145 @@ For higher usage:
 - Hardhat
 - Docker
 - Node.js
+=======
+# NFT Collection – ERC-721 Smart Contract (Dockerized + Tested)
+
+This project implements a secure, ERC-721–compatible NFT collection smart contract with a **maximum supply limit**, **admin-only minting**, and **metadata support**. The project is fully containerized so the complete test suite runs automatically inside Docker without any manual setup.
+
+The contract is written in Solidity and uses **Hardhat + OpenZeppelin** for security-focused token logic.
+
+---
+
+## 🚀 Features
+
+- ERC-721–compatible NFT contract
+- Admin-only minting (owner controlled)
+- Enforced **maximum supply**
+- Prevention of double-minting
+- Token metadata via **base URI**
+- Safety checks:
+  - zero-address mint prevention
+  - duplicate token prevention
+  - max supply limit enforcement
+- Automated Hardhat test suite
+- Fully self-contained Docker execution
+
+---
+
+## 🏗 Project Structure
+
+```
+project-root/
+│
+├── contracts/
+│   └── NftCollection.sol
+│
+├── test/
+│   └── NftCollection.test.js
+│
+├── hardhat.config.js
+├── package.json
+├── Dockerfile
+└── README.md
+```
+
+---
+
+## ⚙️ Technology Stack
+
+- Solidity ^0.8.20
+- Hardhat
+- OpenZeppelin Contracts
+- Node.js
+- Docker
+
+---
+
+## 🔐 Contract Summary
+
+**Contract Name:** `NftCollection`
+
+Core behavior:
+
+- Only the contract owner may mint new NFTs
+- Each token ID can only be minted once
+- Total supply may never exceed the configured `maxSupply`
+- Metadata is provided through a base URI
+
+The required ERC-721 events (`Transfer`, `Approval`, `ApprovalForAll`) are emitted automatically through OpenZeppelin.
+
+---
+
+## 🧪 Running Tests Locally
+
+Install dependencies:
+
+```
+npm install
+```
+
+Compile contracts:
+
+```
+npx hardhat compile
+```
+
+Run tests:
+
+```
+npx hardhat test
+```
+
+Expected output should show all tests **passing**.
+
+---
+
+## 🐳 Running Inside Docker (Evaluation Mode)
+
+### Build the Docker image
+
+```
+docker build -t nft-contract .
+```
+
+### Run the container
+
+```
+docker run nft-contract
+```
+
+The container will:
+
+1. Install dependencies
+2. Compile the contract
+3. Run the full test suite
+
+Expected output:
+
+```
+6 passing
+0 failing
+```
+
+No manual steps or external dependencies are required.
+
+---
+
+## 📌 Test Coverage Overview
+
+The automated test suite validates:
+
+### ✔ Core Behavior
+- deployment configuration
+- owner-only minting
+- successful minting
+- correct ownership and balances
+
+### ✔ Security & Reliability
+- prevents double minting
+- enforces maximum supply
+- prevents mint to zero address
+- invalid actions revert
+
+---
+>>>>>>> dfe9181 (Add ERC721 contract, tests, Docker setup and README update)
