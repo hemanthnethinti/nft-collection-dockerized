@@ -7,6 +7,5 @@ RUN npm install
 
 COPY . .
 
-RUN npx hardhat compile
-
-CMD ["npx","hardhat","test"]
+# Use --no-compile flag if available, or just run tests
+CMD ["sh", "-c", "npx hardhat test --no-compile 2>/dev/null || npx hardhat test"]
